@@ -1,0 +1,7 @@
+# Ignore node_modules (dependencies are installed inside the container)
+node_modules
+npm-debug.log
+yarn-error.log
+dist
+.git
+client-side
