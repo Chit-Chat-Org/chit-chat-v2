@@ -27,9 +27,9 @@ if (process.env.NODE_ENV === 'production') {
   const buildPath = path.join(__dirname, "../build");
   app.use(express.static(buildPath));
 
-  app.get('*', (req: Request, res: Response) => {
-    res.sendFile(path.resolve(buildPath, 'index.html'));
-  });
+  // app.get('*', (req: Request, res: Response) => {
+  //   res.sendFile(path.resolve(buildPath, 'index.html'));
+  // });
 } else {
   app.get('/', (req: Request, res: Response) => res.send('Please set to production'));
 }
