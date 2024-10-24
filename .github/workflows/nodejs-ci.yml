@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: self-hosted
 
     strategy:
@@ -31,8 +30,11 @@ jobs:
         touch .env
         echo "PROD_SECRET=${{ secrets.PROD_SECRET }}" > .env
 
+    - name: Build the application
+      run: npm run build
+
     - name: Install PM2
       run: npm install -g pm2
 
     - name: Start application with PM2
-      run: pm2 restart src/index.ts --interpreter ts-node
+      run: pm2 restart dist/index.js --interpreter node
