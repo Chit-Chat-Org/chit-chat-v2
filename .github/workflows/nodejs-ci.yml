@@ -30,9 +30,6 @@ jobs:
         touch .env
         echo "PROD_SECRET=${{ secrets.PROD_SECRET }}" > .env
 
-    - name: Build the application
-      run: npm run build
-
     - name: Install PM2
       run: npm install -g pm2
 
