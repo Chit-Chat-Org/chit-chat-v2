@@ -28,7 +28,7 @@ jobs:
     - name: Set environment variables
       run: |
         touch .env
-        echo "PROD_SECRET=${{ secrets.PROD_SECRET }}" > .env
+        echo "${{ secrets.PROD_SECRET }}" > .env
 
     - name: Install PM2
       run: npm install -g pm2
